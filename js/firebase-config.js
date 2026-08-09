@@ -6,7 +6,7 @@
  * Project Settings -> General -> Your apps -> Web app SDK setup
  */
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: 'AIzaSyCaAST8kBFDl0Uh9gBwUcFFggGfkfWz9V4',
   authDomain: 'nat-day.firebaseapp.com',
   projectId: 'nat-day',
