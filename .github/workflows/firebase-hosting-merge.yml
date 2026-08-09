@@ -18,3 +18,4 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_NAT_DAY }}
           channelId: live
           projectId: nat-day
+          target: nat-40th-video
