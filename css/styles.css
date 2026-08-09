@@ -122,9 +122,9 @@ body {
 
 .main-title {
   font-family: var(--font-heading);
-  font-size: 2.35rem;
+  font-size: 1.85rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.25;
   background: var(--gradient-festive);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -572,6 +572,6 @@ body {
     max-width: 520px;
   }
   .main-title {
-    font-size: 2.5rem;
+    font-size: 2.05rem;
   }
 }
