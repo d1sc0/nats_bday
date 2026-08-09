@@ -164,11 +164,21 @@ videoForm.addEventListener('submit', async (e) => {
     setSubmittingState(true);
     progressContainer.classList.remove('hidden');
 
-    // Clean filename and path
-    const sanitizedName = senderName.replace(/[^a-zA-Z0-9_-]/g, '_');
-    const timestamp = Date.now();
-    const cleanFileName = selectedFile.name.replace(/[^a-zA-Z0-9._-]/g, '_');
-    const storagePath = `videos/${timestamp}_${sanitizedName}_${cleanFileName}`;
+    // Format name (spaces to underscores, remove special characters)
+    const formattedName = senderName
+      .trim()
+      .replace(/[^a-zA-Z0-9]+/g, '_')
+      .replace(/^_+|_+$/g, '');
+    
+    // Generate a short 4-digit number
+    const randomNumber = Math.floor(1000 + Math.random() * 9000);
+
+    // Extract file extension or default to .mp4
+    const extMatch = selectedFile.name.match(/\.[0-9a-z]+$/i);
+    const ext = extMatch ? extMatch[0].toLowerCase() : '.mp4';
+
+    // Output format: videos/Sarah_Mark_4819.mp4
+    const storagePath = `videos/${formattedName || 'Guest'}_${randomNumber}${ext}`;
     
     const storageRef = ref(storage, storagePath);
 
