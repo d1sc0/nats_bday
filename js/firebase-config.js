@@ -1,17 +1,18 @@
 /**
  * Firebase Configuration for Nat's 40th Birthday Video Collection App.
- * 
+ *
  * Replace the placeholder values below with your Firebase Project credentials.
  * You can find these credentials in the Firebase Console:
  * Project Settings -> General -> Your apps -> Web app SDK setup
  */
-export const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: 'AIzaSyCaAST8kBFDl0Uh9gBwUcFFggGfkfWz9V4',
+  authDomain: 'nat-day.firebaseapp.com',
+  projectId: 'nat-day',
+  storageBucket: 'nat-day.firebasestorage.app',
+  messagingSenderId: '760275841933',
+  appId: '1:760275841933:web:52d19d9810edad322b43c4',
 };
 
 /**
@@ -20,8 +21,8 @@ export const firebaseConfig = {
 export function isFirebaseConfigured() {
   return (
     firebaseConfig.apiKey &&
-    !firebaseConfig.apiKey.includes("YOUR_") &&
+    !firebaseConfig.apiKey.includes('YOUR_') &&
     firebaseConfig.projectId &&
-    !firebaseConfig.projectId.includes("YOUR_")
+    !firebaseConfig.projectId.includes('YOUR_')
   );
 }
