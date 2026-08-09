@@ -103,12 +103,12 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 16px;
+  padding: 8px 18px;
   background: rgba(217, 119, 6, 0.1);
   border: 1px solid rgba(217, 119, 6, 0.25);
   border-radius: var(--radius-full);
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-gold);
   margin-bottom: 14px;
@@ -117,12 +117,12 @@ body {
 }
 
 .sparkle {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .main-title {
   font-family: var(--font-heading);
-  font-size: 2.1rem;
+  font-size: 2.35rem;
   font-weight: 800;
   line-height: 1.2;
   background: var(--gradient-festive);
@@ -133,9 +133,9 @@ body {
 }
 
 .subtitle {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
   padding: 0 8px;
 }
 
@@ -152,25 +152,26 @@ body {
 
 .tips-title {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-gold);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .tips-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .tips-list li {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #334155;
   display: flex;
   align-items: center;
   gap: 10px;
+  line-height: 1.4;
 }
 
 /* Main Cards */
@@ -198,8 +199,8 @@ body {
 }
 
 .form-label {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--text-main);
   font-family: var(--font-heading);
 }
@@ -214,10 +215,10 @@ body {
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
   border-radius: var(--radius-md);
-  padding: 14px 16px;
+  padding: 16px 18px;
   color: #0F172A;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   transition: all 0.2s ease;
 }
 
@@ -295,13 +296,13 @@ body {
 
 .dropzone-primary-text {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-main);
 }
 
 .dropzone-sub-text {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
@@ -324,7 +325,7 @@ body {
 
 .preview-title {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-gold);
 }
@@ -333,7 +334,7 @@ body {
   background: transparent;
   border: none;
   color: var(--primary-rose);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
@@ -418,13 +419,13 @@ body {
 /* Submit Button */
 .btn-submit {
   width: 100%;
-  padding: 16px 20px;
+  padding: 18px 22px;
   background: var(--gradient-button);
   border: none;
   border-radius: var(--radius-md);
   color: #FFFFFF;
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 1.18rem;
   font-weight: 800;
   cursor: pointer;
   box-shadow: var(--shadow-button);
@@ -466,9 +467,9 @@ body {
 
 .support-text {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .support-link {
