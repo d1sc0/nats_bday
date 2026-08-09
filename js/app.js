@@ -12,7 +12,6 @@ import {
 const formCard = document.getElementById('formCard');
 const videoForm = document.getElementById('videoForm');
 const senderNameInput = document.getElementById('senderName');
-const birthdayNoteInput = document.getElementById('birthdayNote');
 const videoInput = document.getElementById('videoInput');
 const dropzone = document.getElementById('dropzone');
 const dropzoneContent = document.getElementById('dropzoneContent');
@@ -154,9 +153,7 @@ videoForm.addEventListener('submit', async (e) => {
     return;
   }
 
-  const birthdayNote = birthdayNoteInput.value.trim();
-
-  // If Firebase is not configured, run demo upload simulation
+    // If Firebase is not configured, run demo upload simulation
   if (!isFirebaseConfigured() || !storage) {
     simulateDemoUpload(senderName);
     return;
@@ -180,7 +177,6 @@ videoForm.addEventListener('submit', async (e) => {
       contentType: selectedFile.type || 'video/mp4',
       customMetadata: {
         senderName: senderName,
-        birthdayNote: birthdayNote || '',
         uploadDate: new Date().toISOString()
       }
     };
