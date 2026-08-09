@@ -8,7 +8,7 @@
 // Your web app's Firebase configuration
 export const firebaseConfig = {
   apiKey: 'AIzaSyCaAST8kBFDl0Uh9gBwUcFFggGfkfWz9V4',
-  authDomain: 'nat-day.firebaseapp.com',
+  authDomain: 'nat-40th-video.firebaseapp.com',
   projectId: 'nat-day',
   storageBucket: 'nat-day.firebasestorage.app',
   messagingSenderId: '760275841933',
