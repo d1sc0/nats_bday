@@ -288,10 +288,9 @@ body {
   margin-bottom: 4px;
 }
 
-.camera-icon {
-  width: 26px;
-  height: 26px;
-  stroke: var(--primary-rose);
+.dropzone-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 .dropzone-primary-text {
