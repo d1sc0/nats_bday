@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Nat's 40th Birthday - Send a Video Message! 🎂</title>
+  <meta name="description" content="Help us celebrate Nat's 40th birthday by uploading your video message!" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+  <div class="glow-bg glow-3"></div>
+
+  <main class="app-container">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="badge-pill">
+        <span class="sparkle">✨</span> 40th Birthday Celebration <span class="sparkle">✨</span>
+      </div>
+      <h1 class="main-title">Surprise Nat with a Video Message! 🎥</h1>
+      <p class="subtitle">
+        We're gathering short video messages from 40 of Nat's favorite people for her milestone 40th birthday video edit. Record or upload your clip below!
+      </p>
+    </header>
+
+    <!-- Tips Card -->
+    <section class="tips-card">
+      <h2 class="tips-title">💡 Quick Recording Tips</h2>
+      <ul class="tips-list">
+        <li><span>⏱️</span> Keep it around 15–60 seconds.</li>
+        <li><span>📱</span> Portrait or landscape mode on your camera works great!</li>
+        <li><span>❤️</span> Share a funny memory, a wish, or just say happy 40th birthday!</li>
+      </ul>
+    </section>
+
+    <!-- Main Upload Form Container -->
+    <section class="card upload-card" id="formCard">
+      <form id="videoForm" class="upload-form">
+        
+        <!-- Sender Name Input -->
+        <div class="form-group">
+          <label for="senderName" class="form-label">
+            Your Name <span class="required-star">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="senderName" 
+            name="senderName" 
+            class="form-input" 
+            placeholder="e.g. Sarah & Mark" 
+            required 
+            autocomplete="name"
+          />
+        </div>
+
+        <!-- Optional Wish/Note -->
+        <div class="form-group">
+          <label for="birthdayNote" class="form-label">
+            Optional Note or Birthday Wish
+          </label>
+          <textarea 
+            id="birthdayNote" 
+            name="birthdayNote" 
+            class="form-textarea" 
+            rows="2" 
+            placeholder="Any message or context for the video edit..."
+          ></textarea>
+        </div>
+
+        <!-- File Upload Area -->
+        <div class="form-group">
+          <label class="form-label">
+            Select or Record Video <span class="required-star">*</span>
+          </label>
+          
+          <div class="file-dropzone" id="dropzone">
+            <input 
+              type="file" 
+              id="videoInput" 
+              accept="video/*" 
+              class="file-input-hidden"
+              required 
+            />
+            <div class="dropzone-content" id="dropzoneContent">
+              <div class="camera-icon-wrapper">
+                <svg class="camera-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m22 8-6 4 6 4V8Z"/>
+                  <rect width="14" height="12" x="2" y="6" rx="2" ry="2"/>
+                </svg>
+              </div>
+              <p class="dropzone-primary-text">Tap to record or choose a video</p>
+              <p class="dropzone-sub-text">MP4, MOV, WEBM or standard camera clips</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Preview Container (Initially Hidden) -->
+        <div class="video-preview-container hidden" id="previewContainer">
+          <div class="preview-header">
+            <span class="preview-title">📹 Video Selected</span>
+            <button type="button" class="btn-change" id="btnChangeVideo">Change Video</button>
+          </div>
+          
+          <video id="videoPreview" class="video-preview-element" controls playsinline></video>
+
+          <div class="file-meta" id="fileMeta">
+            <span id="fileNameDisplay" class="file-name"></span>
+            <span id="fileSizeDisplay" class="file-size"></span>
+          </div>
+        </div>
+
+        <!-- Error Message Banner -->
+        <div class="error-banner hidden" id="errorBanner">
+          <span class="error-icon">⚠️</span>
+          <span class="error-text" id="errorText">An error occurred while uploading.</span>
+        </div>
+
+        <!-- Progress Container (During Upload) -->
+        <div class="progress-container hidden" id="progressContainer">
+          <div class="progress-info">
+            <span class="progress-status" id="progressStatus">Uploading video...</span>
+            <span class="progress-percent" id="progressPercent">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit" id="btnSubmit">
+          <span class="btn-text" id="btnText">Upload Video Message 🚀</span>
+          <span class="btn-spinner hidden" id="btnSpinner"></span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Success Message View (Initially Hidden) -->
+    <section class="card success-card hidden" id="successCard">
+      <div class="success-icon-wrapper">
+        <span class="party-emoji">🥳</span>
+      </div>
+      <h2 class="success-title">Video Message Uploaded!</h2>
+      <p class="success-description">
+        Thank you so much! Your clip has been saved and will be included in Nat's 40th birthday surprise video. 🎂✨
+      </p>
+
+      <button type="button" class="btn-secondary" id="btnUploadAnother">
+        Upload Another Video Clip
+      </button>
+    </section>
+
+    <!-- Demo Mode / Config Notice Banner (Visible if Firebase isn't configured yet) -->
+    <div id="configNotice" class="config-notice hidden">
+      <div class="notice-content">
+        <span class="notice-icon">⚙️</span>
+        <p><strong>Setup Mode:</strong> Firebase credentials need to be added to <code>js/firebase-config.js</code>. Check <code>README.md</code> for setup instructions.</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Made with ❤️ for Nat's 40th Birthday</p>
+    </footer>
+  </main>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

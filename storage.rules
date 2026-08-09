@@ -1,0 +1,13 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /videos/{allPaths=**} {
+      // Allow public write access for video file uploads (max 500MB)
+      allow write: if request.resource.size < 500 * 1024 * 1024
+                   && request.resource.contentType.matches('video/.*');
+      
+      // Allow download/read access
+      allow read: if true;
+    }
+  }
+}
