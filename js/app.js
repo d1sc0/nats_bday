@@ -200,7 +200,7 @@ videoForm.addEventListener('submit', async (e) => {
         const rounded = Math.round(progress);
         progressBar.style.width = `${rounded}%`;
         progressPercent.textContent = `${rounded}%`;
-        progressStatus.textContent = rounded < 100 ? 'Uploading video...' : 'Finalizing...';
+        progressStatus.textContent = rounded < 100 ? 'Uploading video...' : 'Finalising...';
       },
       (error) => {
         console.error('Upload failed:', error);
