@@ -464,6 +464,23 @@ body {
   to { transform: rotate(360deg); }
 }
 
+.support-text {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.support-link {
+  color: var(--primary-rose);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.support-link:hover {
+  color: var(--primary-gold);
+}
+
 /* Success Card */
 .success-card {
   text-align: center;
