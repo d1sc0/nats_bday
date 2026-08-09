@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+          {
+            "source": "**",
+            "destination": "https://nat-40th-video.web.app",
+            "type": 301
+          }
+        ]
     "rewrites": [
       {
         "source": "**",
