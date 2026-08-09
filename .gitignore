@@ -1,5 +1,6 @@
 node_modules
 dist
 .firebase
+downloaded_videos
 .DS_Store
 *.log
