@@ -1,13 +1,11 @@
 {
   "hosting": {
+    "site": "nat-40th-video",
     "public": "dist",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "redirects": [
-      {
-        "source": "**",
-        "destination": "https://nat-40th-video.web.app",
-        "type": 301
-      }
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ],
     "rewrites": [
       {
